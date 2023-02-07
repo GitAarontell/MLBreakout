@@ -6,6 +6,8 @@ public class BallMovement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
+    public float speed;
+    public float rSpeed;
     // Start is called before the first frame update
 
     private void Awake()
@@ -26,7 +28,8 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        speed = rigidBody.velocity.magnitude;
+        //rSpeed = rigidBody.velocity.r
     }
 
     void startingForce()
@@ -35,7 +38,7 @@ public class BallMovement : MonoBehaviour
         float randX = Random.Range(-1.0f, 1.0f);
         Vector2 startForce = new Vector2(randX, -1);
 
-        this.rigidBody.AddForce(startForce.normalized * 300f);
+        this.rigidBody.AddForce(startForce.normalized * 400f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
