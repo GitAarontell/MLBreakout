@@ -60,7 +60,10 @@ public class PaddleControls : MonoBehaviour
             // reflectionAngle is just opposite of current angle
             float reflectionAngle = curAngle * -1;
 
-            // 
+            // so we take the current angle, then we add onto that some position where it hit the paddle as a percentage multiplied by 30 degree.
+            // Ex: if the ball is coming at the paddle at 60 degrees and hits the center of the left side of the paddle, then the pecent will be close to 0 negative number, so we will have the same
+            // reflection angle made by the engine basically. If however, it bounced on the left edge, the percent value would be closer to -1 and we would add -30 degrees to the 60 degree, so it would
+            // bounce more backwards possibly.
             float newAngle = curAngle + positionPercent * 30;
 
             // the angle axis allows for rotation along a specific axis. Vector3.foreward(0, 0, 1) is the z-axis which causes rotation of our objects like if we were to be looking at a clock hand
