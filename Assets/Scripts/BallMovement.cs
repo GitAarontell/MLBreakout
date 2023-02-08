@@ -45,10 +45,13 @@ public class BallMovement : MonoBehaviour
     {
         if (collision.gameObject.name == "Brick")
         {
+            // destroy brick object
             Destroy(collision.gameObject);
-            FindObjectOfType<ScoreCard>().increaseScore(1000);
+            // Find scorecard component, kind of high time complexity but not sure of another way to find it
+            // call the increase score script function and pass in the brick's sprite renderer to use color of brick inside that function
+            FindObjectOfType<ScoreCard>().increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
+            // play this sound
+            this.source.Play();
         }
-        this.source.Play();
-        
     }
 }
