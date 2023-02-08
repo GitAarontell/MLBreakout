@@ -43,6 +43,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+    // testing if i can just push even if there is a change to file
         if (collision.gameObject.name == "Brick")
         {
             // destroy brick object
