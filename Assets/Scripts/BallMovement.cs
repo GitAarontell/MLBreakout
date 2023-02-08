@@ -43,7 +43,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // is the test working
+
         if (collision.gameObject.name == "Brick")
         {
             // destroy brick object
