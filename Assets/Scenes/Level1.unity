@@ -663,7 +663,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 267642051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53906d0b50aa0d54f9f6c5e54c4f3ac0, type: 3}
+  m_Script: {fileID: 11500000, guid: ca5e4275c70a5b44ca91dbf2d0d1dd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1531437626}
@@ -4833,6 +4833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9097341780153080049}
   - component: {fileID: 9097341780153080048}
+  - component: {fileID: 9097341780153080052}
   m_Layer: 0
   m_Name: Logic
   m_TagString: BallCounter
@@ -4840,3 +4841,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9097341780153080052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097341780153080051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7527aa45cc84c46beffd3ab5ea55b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
