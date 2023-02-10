@@ -9,7 +9,9 @@ public class ScoreCard : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public TMPro.TextMeshProUGUI livesText;
     private int score = 0000;
-    private int lives = 3;
+    private int lives = 2;
+    public GameObject gameOver;
+
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
     Dictionary<string, int> colors = new Dictionary<string, int>() {
@@ -25,6 +27,7 @@ public class ScoreCard : MonoBehaviour
         scoreText.text = 0000.ToString("D4");
         // set lives to lives variable at start of game
         livesText.text = "Lives - " + this.lives.ToString();
+
     }
 
     // Update is called once per frame
@@ -46,9 +49,14 @@ public class ScoreCard : MonoBehaviour
         
     }
 
-    // public method called to decrease lives
+    // public method called to decrease lives, and set if game over screen should be displayed
     public void decreaseLives() {
-        this.lives -= 1;
-        livesText.text = "Lives - " + this.lives.ToString();
+        if (lives > 0)
+        lives -= 1;
+        else
+        {
+            gameOver.SetActive(true);
+        }
+        livesText.text = "Lives - " + lives.ToString();
     }
 }
