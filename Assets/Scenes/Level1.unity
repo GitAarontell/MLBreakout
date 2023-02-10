@@ -4772,6 +4772,7 @@ MonoBehaviour:
   scoreText: {fileID: 3317024322482057444}
   livesText: {fileID: 3317024324366733727}
   gameOver: {fileID: 912110688}
+  ball: {fileID: 1531437626}
 --- !u!223 &3317024323582353910
 Canvas:
   m_ObjectHideFlags: 0
@@ -4882,7 +4883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lives - 3
+  m_text: Lives - 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
   m_sharedMaterial: {fileID: -5815691855256115347, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}

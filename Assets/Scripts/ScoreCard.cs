@@ -11,6 +11,7 @@ public class ScoreCard : MonoBehaviour
     private int score = 0000;
     private int lives = 2;
     public GameObject gameOver;
+    public GameObject ball;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -55,7 +56,10 @@ public class ScoreCard : MonoBehaviour
         lives -= 1;
         else
         {
+            Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
             gameOver.SetActive(true);
+            ball.transform.position = offscreenPos;
+            
         }
         livesText.text = "Lives - " + lives.ToString();
     }
