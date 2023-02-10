@@ -9,7 +9,7 @@ public class ScoreCard : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public TMPro.TextMeshProUGUI livesText;
     private int score = 0000;
-    private int lives = 2;
+    private int lives = 3;
     public GameObject gameOver;
     public GameObject ball;
 
@@ -50,17 +50,18 @@ public class ScoreCard : MonoBehaviour
         
     }
 
-    // public method called to decrease lives, and set if game over screen should be displayed
+    // public method called to decrease lives, and set if game over screen should be displayed. Also teleports the ball offscreen
     public void decreaseLives() {
-        if (lives > 0)
         lives -= 1;
-        else
+        if (lives == 0)
         {
-            Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
-            gameOver.SetActive(true);
-            ball.transform.position = offscreenPos;
-            
+            gameOver.SetActive(true);            
         }
         livesText.text = "Lives - " + lives.ToString();
+    }
+    //getter for lives
+    public int getLives()
+    {
+        return lives;
     }
 }

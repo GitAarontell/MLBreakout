@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour
 {
-    //public GameObject Player;
-    //public Transform respawnPoint;
+    public GameObject Player;
+    public Transform respawnPoint;
+    
 
     // make scoreScript available to all script functions
-    private ScoreCard scoreScript;
+    public ScoreCard scoreScript;
 
     void Start()
     {
@@ -21,10 +22,10 @@ public class KillPlayer : MonoBehaviour
     {
         
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Collision");
+        //print("Collision");
         Debug.Log("Collision occurred");
         if(collision.gameObject.name == "Ball")
         {
@@ -32,13 +33,28 @@ public class KillPlayer : MonoBehaviour
             //***** I experimented with resetting the scene, but the progress with destorying bricks is erased.
                 // Scene currentScene = SceneManager.GetActiveScene();
                 // SceneManager.LoadScene(currentScene.name);
-            //Player.transform.position = respawnPoint.position;
-            // random direction for x with vector y always going down. COPIED FROM BallMovement Script
-            float randX = Random.Range(-1.0f, 1.0f);
-            Vector2 startForce = new Vector2(randX, -1);
-            //Player.GetComponent<Rigidbody2D>().velocity = startForce;
-            //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
-
+            Player.transform.position = respawnPoint.position;
+            // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
+            Vector2 zeroVelocity = new Vector2(0, 0);
+            Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+            //Did this to add the delay
+            if (scoreScript.getLives()>0)
+                Invoke("restartMovement", 2.0f);
+            else
+            {
+                Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
+                Player.transform.position = offscreenPos;
+            }
         }
+    }
+
+    //Restarts the balls movement
+    private void restartMovement()
+    {
+        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
+        float randX = Random.Range(-1.0f, 1.0f);
+        Vector2 startForce = new Vector2(randX, -1);
+        Player.GetComponent<Rigidbody2D>().velocity = startForce;
+        Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
 }
