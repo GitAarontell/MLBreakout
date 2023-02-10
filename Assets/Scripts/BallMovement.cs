@@ -50,7 +50,10 @@ public class BallMovement : MonoBehaviour
             // Find scorecard component, kind of high time complexity but not sure of another way to find it
             // call the increase score script function and pass in the brick's sprite renderer to use color of brick inside that function
             scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
-            
+
+        } else if (collision.gameObject.name == "WallBottom") {
+            // calls the decrease lives function from the scorecard script
+            scoreScript.decreaseLives();
         }
         // play this sound
         this.source.Play();

@@ -14,9 +14,6 @@ public class KillPlayer : MonoBehaviour
 
     void Start()
     {
-        // find the scorecard script object. This function is really slow, so we just want to use it once and
-        // store it in a variable since we will use it everytime we decrement lives.
-        scoreScript = FindObjectOfType<ScoreCard>();
     }
 
     // Update is called once per frame
@@ -41,9 +38,6 @@ public class KillPlayer : MonoBehaviour
             Vector2 startForce = new Vector2(randX, -1);
             //Player.GetComponent<Rigidbody2D>().velocity = startForce;
             //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
-
-            // calls the decrease lives function from the scorecard script
-            scoreScript.decreaseLives();
 
         }
     }
