@@ -6,6 +6,7 @@ public class BallMovement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
+    private ScoreCard scoreScript;
 
     private void Awake()
     {
@@ -17,6 +18,9 @@ public class BallMovement : MonoBehaviour
 
     void Start()
     {
+        // find the scorecard script object. This function is really slow, so we just want to use it once and
+        // store it in a variable since we will use it everytime we decrement lives.
+        scoreScript = FindObjectOfType<ScoreCard>();
         // Invoke takes in string of function name and an integer representing seconds to delay
         // so this delays ball movement start by 1 seconds
         Invoke("startingForce", 1);
@@ -45,7 +49,7 @@ public class BallMovement : MonoBehaviour
             Destroy(collision.gameObject);
             // Find scorecard component, kind of high time complexity but not sure of another way to find it
             // call the increase score script function and pass in the brick's sprite renderer to use color of brick inside that function
-            FindObjectOfType<ScoreCard>().increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
+            scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
             
         }
         // play this sound

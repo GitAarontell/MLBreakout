@@ -8,10 +8,15 @@ public class KillPlayer : MonoBehaviour
 {
     //public GameObject Player;
     //public Transform respawnPoint;
-    // Start is called before the first frame update
+
+    // make scoreScript available to all script functions
+    private ScoreCard scoreScript;
+
     void Start()
     {
-        
+        // find the scorecard script object. This function is really slow, so we just want to use it once and
+        // store it in a variable since we will use it everytime we decrement lives.
+        scoreScript = FindObjectOfType<ScoreCard>();
     }
 
     // Update is called once per frame
@@ -37,8 +42,8 @@ public class KillPlayer : MonoBehaviour
             //Player.GetComponent<Rigidbody2D>().velocity = startForce;
             //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
 
-            // calls the decrease lives function in scorecard script
-            FindObjectOfType<ScoreCard>().decreaseLives();
+            // calls the decrease lives function from the scorecard script
+            scoreScript.decreaseLives();
 
         }
     }
