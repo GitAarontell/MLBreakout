@@ -666,8 +666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5e4275c70a5b44ca91dbf2d0d1dd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1531437626}
-  respawnPoint: {fileID: 1494290132}
 --- !u!1001 &308754967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3315,8 +3313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1531437629}
   source: {fileID: 0}
-  speed: 0
-  rSpeed: 0
 --- !u!50 &1531437629 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4261628031831473026, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
@@ -4312,7 +4308,6 @@ GameObject:
   - component: {fileID: 3317024323582353905}
   - component: {fileID: 3317024323582353904}
   - component: {fileID: 3317024323582353908}
-  - component: {fileID: 3317024323582353909}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4332,22 +4327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4a3c09b99ce3241a7e5e5b6823cff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textObj: {fileID: 3317024322482057444}
-  score: 0
---- !u!114 &3317024323582353909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3317024323582353907}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a337011225b2644a6f3421f5996535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballCtr: 2
-  liveCtr: {fileID: 3317024324366733727}
+  scoreText: {fileID: 3317024322482057444}
+  livesText: {fileID: 3317024324366733727}
 --- !u!223 &3317024323582353910
 Canvas:
   m_ObjectHideFlags: 0
@@ -4457,7 +4438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lives - 2
+  m_text: Lives - 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
   m_sharedMaterial: {fileID: -5815691855256115347, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
@@ -4794,20 +4775,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9097341780153080048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097341780153080051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a337011225b2644a6f3421f5996535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballCtr: 2
-  liveCtr: {fileID: 3317024324366733727}
 --- !u!4 &9097341780153080049
 Transform:
   m_ObjectHideFlags: 0
@@ -4832,7 +4799,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9097341780153080049}
-  - component: {fileID: 9097341780153080048}
   - component: {fileID: 9097341780153080052}
   m_Layer: 0
   m_Name: Logic

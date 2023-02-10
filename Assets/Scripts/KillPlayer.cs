@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class KIllPlayer : MonoBehaviour
+public class KillPlayer : MonoBehaviour
 {
-    public GameObject Player;
-    public Transform respawnPoint;
+    //public GameObject Player;
+    //public Transform respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +20,26 @@ public class KIllPlayer : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        print("Collision");
         Debug.Log("Collision occurred");
-        if(other.gameObject.CompareTag("Player"))
+        if(collision.gameObject.name == "Ball")
         {
             Debug.Log("Player Detected");
             //***** I experimented with resetting the scene, but the progress with destorying bricks is erased.
                 // Scene currentScene = SceneManager.GetActiveScene();
                 // SceneManager.LoadScene(currentScene.name);
-            Player.transform.position = respawnPoint.position;
+            //Player.transform.position = respawnPoint.position;
             // random direction for x with vector y always going down. COPIED FROM BallMovement Script
             float randX = Random.Range(-1.0f, 1.0f);
             Vector2 startForce = new Vector2(randX, -1);
-            Player.GetComponent<Rigidbody2D>().velocity = startForce;
-            Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+            //Player.GetComponent<Rigidbody2D>().velocity = startForce;
+            //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+
+            // calls the decrease lives function in scorecard script
+            FindObjectOfType<ScoreCard>().decreaseLives();
+
         }
     }
 }

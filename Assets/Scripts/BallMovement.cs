@@ -6,9 +6,6 @@ public class BallMovement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
-    public float speed;
-    public float rSpeed;
-    // Start is called before the first frame update
 
     private void Awake()
     {
@@ -28,8 +25,6 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = rigidBody.velocity.magnitude;
-        //rSpeed = rigidBody.velocity.r
     }
 
     void startingForce()
@@ -51,8 +46,9 @@ public class BallMovement : MonoBehaviour
             // Find scorecard component, kind of high time complexity but not sure of another way to find it
             // call the increase score script function and pass in the brick's sprite renderer to use color of brick inside that function
             FindObjectOfType<ScoreCard>().increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
-            // play this sound
-            this.source.Play();
+            
         }
+        // play this sound
+        this.source.Play();
     }
 }
