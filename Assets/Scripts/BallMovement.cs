@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallMovement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
     private ScoreCard scoreScript;
+    private SceneSwap scene_swap;
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class BallMovement : MonoBehaviour
         // find the scorecard script object. This function is really slow, so we just want to use it once and
         // store it in a variable since we will use it everytime we decrement lives.
         scoreScript = FindObjectOfType<ScoreCard>();
+        // find the SceneSwap Object.
+        scene_swap = FindObjectOfType<SceneSwap>();
         // Invoke takes in string of function name and an integer representing seconds to delay
         // so this delays ball movement start by 1 seconds
         Invoke("startingForce", 1);
@@ -52,7 +56,14 @@ public class BallMovement : MonoBehaviour
             scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
             // play this sound
             this.source.Play();
-
+            // End game if no bricks are left
+            if (GameObject.FindGameObjectsWithTag("Brick").Length == 1)
+            {
+                Debug.Log("Final Brick Destroyed");
+                // SceneManager.LoadScene("Level1");
+                scene_swap.IncrementLevel();
+                scene_swap.PlayNormalBreakout();
+            }
         }
         else if (collision.gameObject.name == "WallBottom")
         {

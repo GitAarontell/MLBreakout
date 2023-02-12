@@ -25,11 +25,8 @@ public class KillPlayer : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //print("Collision");
-        Debug.Log("Collision occurred");
         if(collision.gameObject.name == "Ball")
         {
-            Debug.Log("Player Detected");
             //***** I experimented with resetting the scene, but the progress with destorying bricks is erased.
                 // Scene currentScene = SceneManager.GetActiveScene();
                 // SceneManager.LoadScene(currentScene.name);

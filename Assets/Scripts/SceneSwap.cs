@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneSwap : MonoBehaviour
 {
 
-    
+    private int current_level = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,17 @@ public class SceneSwap : MonoBehaviour
     //Launches normal breakout
     public void PlayNormalBreakout()
     {
-        SceneManager.LoadScene("Level1");
+        if (current_level == 3)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        SceneManager.LoadScene("Level"+current_level.ToString());
+    }
+
+    // Increment Current Level
+    public void IncrementLevel()
+    {
+        current_level += 1;
     }
 
     // Placeholder Function, will need to be implemented when we figure out ML
