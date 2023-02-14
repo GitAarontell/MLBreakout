@@ -8,7 +8,8 @@ public class BallMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     public AudioSource source;
     private ScoreCard scoreScript;
-    private SceneSwap scene_swap;
+    private SceneSwap sceneSwap;
+    public GameObject gameWon;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class BallMovement : MonoBehaviour
         // store it in a variable since we will use it everytime we decrement lives.
         scoreScript = FindObjectOfType<ScoreCard>();
         // find the SceneSwap Object.
-        scene_swap = FindObjectOfType<SceneSwap>();
+        sceneSwap = FindObjectOfType<SceneSwap>();
         // Invoke takes in string of function name and an integer representing seconds to delay
         // so this delays ball movement start by 1 seconds
         Invoke("startingForce", 1);
@@ -57,12 +58,20 @@ public class BallMovement : MonoBehaviour
             // play this sound
             this.source.Play();
             // End game if no bricks are left
-            if (GameObject.FindGameObjectsWithTag("Brick").Length == 1)
+            if (GameObject.FindGameObjectsWithTag("Brick").Length == 1) 
             {
-                Debug.Log("Final Brick Destroyed");
-                // SceneManager.LoadScene("Level1");
-                scene_swap.IncrementLevel();
-                scene_swap.PlayNormalBreakout();
+                if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level2"))
+                {
+                    Debug.Log("Final Brick Destroyed");
+                    // SceneManager.LoadScene("Level1");
+                    //sceneSwap.IncrementLevel();
+                }
+                else
+                {
+                    Debug.Log("Player Won Game");
+                    //gameWon.SetActive(true);
+                }
+                
             }
         }
         else if (collision.gameObject.name == "WallBottom")

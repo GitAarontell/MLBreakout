@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreCard : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ScoreCard : MonoBehaviour
     private int lives = 3;
     public GameObject gameOver;
     public GameObject ball;
+    private SceneSwap sceneSwap;
+    public GameObject gameWon;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -28,6 +31,8 @@ public class ScoreCard : MonoBehaviour
         scoreText.text = 0000.ToString("D4");
         // set lives to lives variable at start of game
         livesText.text = "Lives - " + this.lives.ToString();
+        //setting sceneSwap
+        sceneSwap = FindObjectOfType<SceneSwap>();
 
     }
 
@@ -47,6 +52,11 @@ public class ScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
+        if (score >= 135000 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))
+            sceneSwap.IncrementLevel();
+        if (score == 90000 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level2"))
+            gameWon.SetActive(true);
+
         
     }
 
