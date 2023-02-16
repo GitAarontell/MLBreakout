@@ -57,22 +57,22 @@ public class BallMovement : MonoBehaviour
             scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
             // play this sound
             this.source.Play();
-            // End game if no bricks are left
-            if (GameObject.FindGameObjectsWithTag("Brick").Length == 1) 
-            {
-                if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level2"))
-                {
-                    Debug.Log("Final Brick Destroyed");
-                    // SceneManager.LoadScene("Level1");
-                    //sceneSwap.IncrementLevel();
-                }
-                else
-                {
-                    Debug.Log("Player Won Game");
-                    //gameWon.SetActive(true);
-                }
-                
-            }
+            
+            // Uncomment this nested if statement for debug mode with bricks able to be destroyed
+            //if (GameObject.FindGameObjectsWithTag("Brick").Length == 1) 
+            //{
+            //    if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level2"))
+            //    {
+            //        Debug.Log("Final Brick Destroyed");       
+            //        sceneSwap.IncrementLevel();
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("Player Won Game");
+            //        gameWon.SetActive(true);
+            //    }
+            //    
+            //}
         }
         else if (collision.gameObject.name == "WallBottom")
         {
