@@ -15,6 +15,7 @@ public class PaddleControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // gets either 1 or -1 depending on whether "A"(-1) was pushed or "D"(1) was pushed. Also works for arrows. This is Unity's default input controls
         float x = Input.GetAxis("Horizontal");
         // I create a vector3, although a vector2 would probably also work, and I just place this value from user input into movement vector
@@ -22,7 +23,7 @@ public class PaddleControls : MonoBehaviour
         // tranform accesses the position of the object this script is attached to
         // since vectors view things in world direction, I used Translate to use relative direction, so moving to the left is moving to the paddles left not the world coordinates left vice versa
         this.gameObject.transform.Translate(movement * 8.0f * Time.deltaTime);
-
+        
         
     }
     // OnCollisionEnter info https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html

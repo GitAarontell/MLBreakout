@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BallMovement : MonoBehaviour
+public class mlBallMovement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
-    public GameObject gameWon;
+    public scoringMLAgent scoringMLAgentScript;
+    public PaddleMLAgent paddleMLAgentScript;
 
-    private ScoreCard scoreScript;
-    private SceneSwap sceneSwap;
 
 
     private void Awake()
@@ -23,12 +22,6 @@ public class BallMovement : MonoBehaviour
 
     void Start()
     {
-
-        // find the scorecard script object. This function is really slow, so we just want to use it once and
-        // store it in a variable since we will use it everytime we decrement lives.
-        scoreScript = FindObjectOfType<ScoreCard>();
-        // find the SceneSwap Object.
-        sceneSwap = FindObjectOfType<SceneSwap>();
         // Invoke takes in string of function name and an integer representing seconds to delay
         // so this delays ball movement start by 1 seconds
         Invoke("startingForce", 1);
@@ -50,40 +43,28 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        // when ball hits brick
         if (collision.gameObject.name == "Brick")
         {
             // destroy brick object
             Destroy(collision.gameObject);
 
             // rewards ml agent for hitting brick with 2 points
-            // mlScript.brickCollisionReward();
+            paddleMLAgentScript.brickCollisionReward();
 
-            // call the increase score script function and pass in the brick's sprite renderer to use color of brick inside that function
-            scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
+            // print(collision.otherRigidbody.velocity.magnitude);
+
+            // decrease brick count
+            scoringMLAgentScript.decreaseBrickCount();
+
             // play this sound
             this.source.Play();
-            
-            // Uncomment this nested if statement for debug mode with bricks able to be destroyed
-            //if (GameObject.FindGameObjectsWithTag("Brick").Length == 1) 
-            //{
-            //    if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level2"))
-            //    {
-            //        Debug.Log("Final Brick Destroyed");       
-            //        sceneSwap.IncrementLevel();
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("Player Won Game");
-            //        gameWon.SetActive(true);
-            //    }
-            //    
-            //}
         }
+        // when ball hits bottom wall
         else if (collision.gameObject.name == "WallBottom")
         {
             // calls the decrease lives function from the scorecard script
-            scoreScript.decreaseLives();
+            paddleMLAgentScript.punishment();
         }
         else
             this.source.Play(); // if it hits the paddle
@@ -91,3 +72,4 @@ public class BallMovement : MonoBehaviour
 
     }
 }
+

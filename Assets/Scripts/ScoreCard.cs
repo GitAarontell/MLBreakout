@@ -10,7 +10,7 @@ public class ScoreCard : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public TMPro.TextMeshProUGUI livesText;
     private int score = 0000;
-    private int lives = 3;
+    public int lives = 3;
     public GameObject gameOver;
     public GameObject ball;
     private SceneSwap sceneSwap;
@@ -65,6 +65,7 @@ public class ScoreCard : MonoBehaviour
         lives -= 1;
         if (lives == 0)
         {
+            // commented out for training ml agent
             gameOver.SetActive(true);            
         }
         livesText.text = "Lives - " + lives.ToString();
@@ -74,4 +75,5 @@ public class ScoreCard : MonoBehaviour
     {
         return lives;
     }
+
 }

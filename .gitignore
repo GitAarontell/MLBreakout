@@ -2,6 +2,10 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+# make sure to add your virtual environment folder name, it contains too much
+/venv/
+/config/
+/results/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/

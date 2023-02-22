@@ -40,18 +40,29 @@ public class KillPlayer : MonoBehaviour
             else
             {
                 Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
-                Player.transform.position = offscreenPos;
+                Player.transform.localPosition = offscreenPos;
             }
         }
     }
 
     //Restarts the balls movement
-    private void restartMovement()
+    public void restartMovement()
     {
         //random direction for x with vector y always going down. COPIED FROM BallMovement Script
         float randX = Random.Range(-1.0f, 1.0f);
         Vector2 startForce = new Vector2(randX, -1);
         Player.GetComponent<Rigidbody2D>().velocity = startForce;
         Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////// for ml agent
+    public void respawn()
+    {
+        Vector2 zeroVelocity = new Vector2(0, 0);
+        Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+        // sets balls local position
+        Player.transform.localPosition = new Vector3(-8f, -3.4f, 10f);
+        Invoke("restartMovement", 2f);
+
     }
 }
