@@ -25,23 +25,30 @@ public class PlayerKillPlayer : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Ball")
+        if (collision.gameObject.name == "Ball")
         {
-            //***** I experimented with resetting the scene, but the progress with destorying bricks is erased.
-                // Scene currentScene = SceneManager.GetActiveScene();
-                // SceneManager.LoadScene(currentScene.name);
-            Player.transform.position = respawnPoint.position;
-            // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
-            Vector2 zeroVelocity = new Vector2(0, 0);
-            Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
-            //Did this to add the delay
-            if (scoreScript.getLives()>0)
-                Invoke("restartMovement", 2.0f);
-            else
-            {
-                Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
-                Player.transform.localPosition = offscreenPos;
-            }
+            killBall();
+        }
+  
+    }
+
+    public void killBall()
+    {
+       
+        //***** I experimented with resetting the scene, but the progress with destorying bricks is erased.
+        // Scene currentScene = SceneManager.GetActiveScene();
+        // SceneManager.LoadScene(currentScene.name);
+        Player.transform.position = respawnPoint.position;
+        // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
+        Vector2 zeroVelocity = new Vector2(0, 0);
+        Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+        //Did this to add the delay
+        if (scoreScript.getLives() > 0)
+            Invoke("restartMovement", 2.0f);
+        else
+        {
+            Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
+            Player.transform.localPosition = offscreenPos;
         }
     }
 

@@ -39,12 +39,12 @@ public class SceneSwap : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    // Placeholder Function, will need to be implemented when we figure out ML
+    // Changes to Player vs ML version of breakout
     public void PlayMLBreakout()
     {
-        Debug.Log("y u no work");
-        //SceneManager.LoadScene("MLVsPlayer");
-        SceneManager.LoadScene("Level2");
+        
+        SceneManager.LoadScene("MLVsPlayer");
+        
     }
     //Quits the game
     public void Quit()

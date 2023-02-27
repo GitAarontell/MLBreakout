@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: ccda529fce3166a4bb0c50598064b203
+  - enabled: 1
+    path: Assets/Scenes/MLVsPlayer.unity
+    guid: e834667305062e0439a701405e9a59b1
   m_configObjects: {}

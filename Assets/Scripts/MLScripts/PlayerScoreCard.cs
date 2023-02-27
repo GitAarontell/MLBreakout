@@ -15,6 +15,8 @@ public class PlayerScoreCard : MonoBehaviour
     public GameObject ball;
     private SceneSwap sceneSwap;
     public GameObject gameWon;
+    public GameObject bricksLevel2;
+    private PlayerKillPlayer playerKillPlayer;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -33,6 +35,7 @@ public class PlayerScoreCard : MonoBehaviour
         livesText.text = "Lives - " + this.lives.ToString();
         //setting sceneSwap
         sceneSwap = FindObjectOfType<SceneSwap>();
+        playerKillPlayer= FindObjectOfType<PlayerKillPlayer>();
 
     }
 
@@ -52,9 +55,12 @@ public class PlayerScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
-        if (score >= 135000 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))
-            sceneSwap.IncrementLevel();
-        if (score == 90000 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level2"))
+        if (score >= 135000)
+        {
+            bricksLevel2.SetActive(true);
+            playerKillPlayer.killBall();
+        }
+        if (score == 90000 + 135000 )
             gameWon.SetActive(true);
 
         

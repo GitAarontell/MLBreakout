@@ -321,7 +321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1586721989499371219, guid: 9c344cfac01a753408f15b3091ca34d3, type: 3}
       propertyPath: m_text
-      value: Play Breakout Against A ML CPU (Coming Soon)
+      value: Play Breakout Against A ML CPU (Takes a sec to load)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586721989499371219, guid: 9c344cfac01a753408f15b3091ca34d3, type: 3}
+      propertyPath: m_fontSize
+      value: 37.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586721989499371219, guid: 9c344cfac01a753408f15b3091ca34d3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 37.94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c344cfac01a753408f15b3091ca34d3, type: 3}
