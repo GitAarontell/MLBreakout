@@ -16,7 +16,7 @@ public class MLScoreCard : MonoBehaviour
     private SceneSwap sceneSwap;
     public GameObject gameWon;
     public GameObject bricksLevel2;
-    private scoringMLAgent scoringMLAgent;
+    private MLKillPlayer MLKillPlayer;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -35,7 +35,7 @@ public class MLScoreCard : MonoBehaviour
         livesText.text = "Lives - " + this.lives.ToString();
         //setting sceneSwap
         sceneSwap = FindObjectOfType<SceneSwap>();
-        scoringMLAgent = FindObjectOfType<scoringMLAgent>();
+        MLKillPlayer = FindObjectOfType<MLKillPlayer>();
 
     }
 
@@ -55,17 +55,21 @@ public class MLScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
-        if (score >= 135000)
+        if (score == 135000)
         {
+            Debug.Log("hit first if statement");
+            MLKillPlayer.killBall();
             bricksLevel2.SetActive(true);
-            scoringMLAgent.respawn();
-            scoringMLAgent.setBrickCount(36);
         }
         if (score == 90000 + 135000)
+        {
+         
             gameWon.SetActive(true);
+            Debug.Log("hit second if statement");
+        }
 
-        
-    }
+
+        }
 
     // public method called to decrease lives, and set if game over screen should be displayed. Also teleports the ball offscreen
     public void decreaseLives() {

@@ -55,10 +55,11 @@ public class PlayerScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
-        if (score >= 135000)
+        if (score == 135000)
         {
-            bricksLevel2.SetActive(true);
             playerKillPlayer.killBall();
+            bricksLevel2.SetActive(true);
+            
         }
         if (score == 90000 + 135000 )
             gameWon.SetActive(true);
