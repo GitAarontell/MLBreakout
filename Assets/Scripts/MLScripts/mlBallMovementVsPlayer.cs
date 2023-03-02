@@ -7,8 +7,6 @@ public class mlBallMovementVsPlayer : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public AudioSource source;
-    public scoringMLAgent scoringMLAgentScript;
-    public PaddleMLAgent paddleMLAgentScript;
     private MLScoreCard scoreScript;
     
 
@@ -53,13 +51,7 @@ public class mlBallMovementVsPlayer : MonoBehaviour
             // destroy brick object
             Destroy(collision.gameObject);
 
-            // rewards ml agent for hitting brick with 2 points
-            paddleMLAgentScript.brickCollisionReward();
-
             // print(collision.otherRigidbody.velocity.magnitude);
-
-            // decrease brick count
-            scoringMLAgentScript.decreaseBrickCount();
 
             // Increment score
             scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
@@ -69,8 +61,6 @@ public class mlBallMovementVsPlayer : MonoBehaviour
         // when ball hits bottom wall
         else if (collision.gameObject.name == "WallBottom")
         {
-            // calls the decrease lives function from the scorecard script
-            paddleMLAgentScript.punishment();
 
             // calls the decrease lives function from the scorecard script
             scoreScript.decreaseLives();
