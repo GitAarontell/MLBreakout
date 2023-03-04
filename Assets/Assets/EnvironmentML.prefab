@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 320702186669866781}
   - component: {fileID: 320702186669866780}
   - component: {fileID: 320702186669866783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -587,11 +587,11 @@ MonoBehaviour:
   - Brick
   m_RaysPerDirection: 10
   m_MaxRayDegrees: 26.6
-  m_SphereCastRadius: 7.96
+  m_SphereCastRadius: 0.98
   m_RayLength: 33
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 72
   m_ObservationStacks: 2
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 320702187925892350}
   - component: {fileID: 320702187925892321}
   - component: {fileID: 320702187925892320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallLeft
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320702187925892322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.5699, y: 0.1200676, z: 5.609544}
+  m_LocalPosition: {x: -19.5699, y: 0.1200676, z: 0}
   m_LocalScale: {x: 1, y: 21.789999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320702188015141890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3201027, y: -11.279934, z: 5.609544}
+  m_LocalPosition: {x: 0.3201027, y: -11.279934, z: 0}
   m_LocalScale: {x: 40.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 320702188339238287}
   - component: {fileID: 320702188339238286}
   - component: {fileID: 320702188339238385}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallRight
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320702188339238387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.210102, y: 0.1200676, z: 5.609544}
+  m_LocalPosition: {x: 20.210102, y: 0.1200676, z: 0}
   m_LocalScale: {x: 1, y: 21.789999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -997,7 +997,7 @@ GameObject:
   - component: {fileID: 320702188485331109}
   - component: {fileID: 320702188485331108}
   - component: {fileID: 320702188485331111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallTop
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320702188485331113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3201027, y: 11.520069, z: 5.609544}
+  m_LocalPosition: {x: 0.3201027, y: 11.520069, z: 0}
   m_LocalScale: {x: 40.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
