@@ -78,4 +78,8 @@ public class scoringMLAgent : MonoBehaviour
     {
         return this.brickCount;
     }
+    public void setBrickCount(int newCount)
+    {
+        this.brickCount = newCount;
+    }
 }
