@@ -2307,6 +2307,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659611546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5515608269925743864, guid: 003e609b96f275d4386a5669da731283, type: 3}
+  m_PrefabInstance: {fileID: 8194480547243016490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &755798461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 320702187189988809, guid: 003e609b96f275d4386a5669da731283, type: 3}
@@ -3260,6 +3265,7 @@ MonoBehaviour:
   ball: {fileID: 1165721837}
   gameWon: {fileID: 1585152471}
   bricksLevel2: {fileID: 200850574}
+  bricksLevel1: {fileID: 659611546}
 --- !u!1 &1053674530
 GameObject:
   m_ObjectHideFlags: 0
@@ -12386,6 +12392,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 320702187487064508, guid: 003e609b96f275d4386a5669da731283, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515608269925743864, guid: 003e609b96f275d4386a5669da731283, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

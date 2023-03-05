@@ -42,6 +42,8 @@ public class MLKillPlayer : MonoBehaviour
         // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
         Vector2 zeroVelocity = new Vector2(0, 0);
         Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+        Player.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+        Debug.Log("ml kill");
         //Did this to add the delay
         if (scoreScript.getLives() > 0)
             Invoke("restartMovement", 2.0f);
@@ -52,24 +54,14 @@ public class MLKillPlayer : MonoBehaviour
         }
     }
 
-    //Restarts the balls movement
+    //doesnt do anything here, since ball movement is restarted in the ml scripts
     public void restartMovement()
     {
         //random direction for x with vector y always going down. COPIED FROM BallMovement Script
         float randX = Random.Range(-1.0f, 1.0f);
         Vector2 startForce = new Vector2(randX, -1);
-        Player.GetComponent<Rigidbody2D>().velocity = startForce;
-        Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+        //Player.GetComponent<Rigidbody2D>().velocity = startForce;
+        //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////// for ml agent
-    public void respawn()
-    {
-        Vector2 zeroVelocity = new Vector2(0, 0);
-        Player.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
-        // sets balls local position
-        Player.transform.localPosition = new Vector3(-8f, -3.4f, 10f);
-        Invoke("restartMovement", 2f);
-
-    }
 }

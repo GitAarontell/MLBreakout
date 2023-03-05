@@ -17,6 +17,7 @@ public class MLScoreCard : MonoBehaviour
     public GameObject gameWon;
     public GameObject bricksLevel2;
     private MLKillPlayer MLKillPlayer;
+    public GameObject bricksLevel1;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -59,6 +60,7 @@ public class MLScoreCard : MonoBehaviour
         {
             Debug.Log("hit first if statement");
             MLKillPlayer.killBall();
+            bricksLevel1.SetActive(false);
             bricksLevel2.SetActive(true);
         }
         if (score == 90000 + 135000)
