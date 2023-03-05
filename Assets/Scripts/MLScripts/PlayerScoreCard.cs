@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class PlayerScoreCard : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class PlayerScoreCard : MonoBehaviour
     public GameObject gameWon;
     public GameObject bricksLevel2;
     private PlayerKillPlayer playerKillPlayer;
+    public TMP_Text levelName;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -59,6 +60,7 @@ public class PlayerScoreCard : MonoBehaviour
         {
             playerKillPlayer.killBall();
             bricksLevel2.SetActive(true);
+            levelName.text = "Player Level 2";
             
         }
         if (score == 90000 + 135000 )

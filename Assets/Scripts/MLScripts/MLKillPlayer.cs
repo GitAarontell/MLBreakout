@@ -63,5 +63,18 @@ public class MLKillPlayer : MonoBehaviour
         //Player.GetComponent<Rigidbody2D>().velocity = startForce;
         //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
+    //used in mlscorecard to counter restart being disbaled for other scripts
+    public void InvokeMLStartMovement()
+    {
+        Invoke("MLStartMovement", 2f);
+    }
+    public void MLStartMovement()
+    {
+        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
+        float randX = Random.Range(-1.0f, 1.0f);
+        Vector2 startForce = new Vector2(randX, -1);
+        Player.GetComponent<Rigidbody2D>().velocity = startForce;
+        Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+    }
 
 }
