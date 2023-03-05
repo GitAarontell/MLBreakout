@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class MLScoreCard : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,7 +17,9 @@ public class MLScoreCard : MonoBehaviour
     public GameObject gameWon;
     public GameObject bricksLevel2;
     private MLKillPlayer MLKillPlayer;
-
+    public GameObject bricksLevel1;
+    public scoringMLAgent scoringMLAgent;
+    public TMP_Text levelName;
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
     Dictionary<string, int> colors = new Dictionary<string, int>() {
@@ -55,11 +57,18 @@ public class MLScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
+        // ML specific thing to not get the ml script to call for the bricks to get redone
+        scoringMLAgent.setBrickCount(45);
+
+        //checking for change in game state
         if (score == 135000)
         {
             Debug.Log("hit first if statement");
             MLKillPlayer.killBall();
+            bricksLevel1.SetActive(false);
             bricksLevel2.SetActive(true);
+            levelName.text = "ML Level 2";
+            MLKillPlayer.InvokeMLStartMovement();
         }
         if (score == 90000 + 135000)
         {

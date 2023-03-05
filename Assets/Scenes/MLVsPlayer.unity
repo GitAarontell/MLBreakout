@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: First Level
+  m_text: Player Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
   m_sharedMaterial: {fileID: -5815691855256115347, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -42.422012, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2307,6 +2307,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659611546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5515608269925743864, guid: 003e609b96f275d4386a5669da731283, type: 3}
+  m_PrefabInstance: {fileID: 8194480547243016490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &755798461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 320702187189988809, guid: 003e609b96f275d4386a5669da731283, type: 3}
@@ -3260,6 +3265,9 @@ MonoBehaviour:
   ball: {fileID: 1165721837}
   gameWon: {fileID: 1585152471}
   bricksLevel2: {fileID: 200850574}
+  bricksLevel1: {fileID: 659611546}
+  scoringMLAgent: {fileID: 8194480547243016498}
+  levelName: {fileID: 1165613385}
 --- !u!1 &1053674530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: First Level
+  m_text: ML Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
   m_sharedMaterial: {fileID: -5815691855256115347, guid: b39060c7556012542a5e534ff7e9c41b, type: 2}
@@ -4514,6 +4522,7 @@ MonoBehaviour:
   ball: {fileID: 990393631}
   gameWon: {fileID: 1615506293}
   bricksLevel2: {fileID: 6072586990860519662}
+  levelName: {fileID: 239490668}
 --- !u!1 &1311186609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12388,10 +12397,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 320702187487064510, guid: 003e609b96f275d4386a5669da731283, type: 3}
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: 316a46431a0ddba499b6cf46037f2992, type: 3}
+=======
+    - target: {fileID: 5515608269925743864, guid: 003e609b96f275d4386a5669da731283, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> 1ff3cdb57d5b76b8d911a943f5d9b664c12fc292
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003e609b96f275d4386a5669da731283, type: 3}
 --- !u!4 &8194480547243016491 stripped
@@ -12419,6 +12435,17 @@ MonoBehaviour:
   Player: {fileID: 1165721837}
   respawnPoint: {fileID: 8194480547243016491}
   scoreScript: {fileID: 1050108475}
+--- !u!114 &8194480547243016498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 320702188015141888, guid: 003e609b96f275d4386a5669da731283, type: 3}
+  m_PrefabInstance: {fileID: 8194480547243016490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194480547243016492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcd20950f5dd5b4fa5b5262fb3ffa6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &8315147393206771317
 BoxCollider2D:
   m_ObjectHideFlags: 0
