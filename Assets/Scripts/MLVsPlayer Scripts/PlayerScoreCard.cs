@@ -16,7 +16,8 @@ public class PlayerScoreCard : MonoBehaviour
     private SceneSwap sceneSwap;
     public GameObject gameWon;
     public GameObject bricksLevel2;
-    private PlayerKillPlayer playerKillPlayer;
+    // private PlayerKillPlayer playerKillPlayer;
+    public PlayerBallMovement playerBallMovementScript;
     public TMP_Text levelName;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
@@ -36,15 +37,10 @@ public class PlayerScoreCard : MonoBehaviour
         livesText.text = "Lives - " + this.lives.ToString();
         //setting sceneSwap
         sceneSwap = FindObjectOfType<SceneSwap>();
-        playerKillPlayer= FindObjectOfType<PlayerKillPlayer>();
+        // playerKillPlayer= FindObjectOfType<PlayerKillPlayer>();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     // called by 
     public void increaseScore(SpriteRenderer obj) 
     {
@@ -58,7 +54,7 @@ public class PlayerScoreCard : MonoBehaviour
         scoreText.text = score.ToString("D4");
         if (score == 135000)
         {
-            playerKillPlayer.killBall();
+            playerBallMovementScript.killBall();
             bricksLevel2.SetActive(true);
             levelName.text = "Player Level 2";
             
