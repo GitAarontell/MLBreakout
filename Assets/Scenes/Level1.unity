@@ -550,7 +550,6 @@ GameObject:
   - component: {fileID: 267642053}
   - component: {fileID: 267642052}
   - component: {fileID: 267642054}
-  - component: {fileID: 267642055}
   m_Layer: 0
   m_Name: WallBottom
   m_TagString: Wall
@@ -620,21 +619,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &267642055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267642051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5e4275c70a5b44ca91dbf2d0d1dd8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1531437626}
-  respawnPoint: {fileID: 1494290132}
-  scoreScript: {fileID: 3317024323582353908}
 --- !u!1 &393868914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,7 +1661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494290131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.507696, y: -1.6806729, z: 6.312355}
+  m_LocalPosition: {x: -3.04, y: -1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1704,6 +1688,7 @@ MonoBehaviour:
   rigidBody: {fileID: 1531437629}
   source: {fileID: 1531437630}
   gameWon: {fileID: 1268087002}
+  respawnPoint: {fileID: 1494290132}
 --- !u!50 &1531437629 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4261628031831473026, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
@@ -2409,7 +2394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.312355
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalRotation.w

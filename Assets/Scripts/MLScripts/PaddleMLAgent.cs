@@ -29,7 +29,7 @@ public class PaddleMLAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        // used so the first time the scene loads it doesn't call this, sinc episode begin starts at every episode.
+        // used so the first time the scene loads it doesn't call this, since episode begin starts at every episode.
         // If we don't have this if check it will destroy the bricks already loaded and reload new ones. Doing this stops it
         // adding a little efficiency at the start.
         if (scoringMLAgentScript.getLives() < 1 || scoringMLAgentScript.getBrickCount() < 1)

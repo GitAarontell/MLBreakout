@@ -29,11 +29,6 @@ public class mlBallMovementVsPlayer : MonoBehaviour
         scoreScript = FindObjectOfType<MLScoreCard>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void startingForce()
     {
         // random direction for x with vector y always going down
@@ -66,8 +61,9 @@ public class mlBallMovementVsPlayer : MonoBehaviour
             scoreScript.decreaseLives();
         }
         else
+        {
             this.source.Play(); // if it hits the paddle
-
+        }
 
     }
 }
