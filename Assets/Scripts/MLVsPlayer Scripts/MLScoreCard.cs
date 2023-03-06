@@ -15,7 +15,7 @@ public class MLScoreCard : MonoBehaviour
     public GameObject ball;
     public GameObject gameWon;
     public GameObject bricksLevel2;
-    private MLKillPlayer MLKillPlayer;
+    public mlBallMovementVsPlayer mlBallMovementScript;
     public GameObject bricksLevel1;
     public TMP_Text levelName;
     // blue is (0.13, 0.69, 0.90, 1.00)
@@ -34,15 +34,9 @@ public class MLScoreCard : MonoBehaviour
         // set lives to lives variable at start of game
         livesText.text = "Lives - " + this.lives.ToString();
         //setting sceneSwap
-        MLKillPlayer = FindObjectOfType<MLKillPlayer>();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     // called by 
     public void increaseScore(SpriteRenderer obj) 
     {
@@ -60,11 +54,11 @@ public class MLScoreCard : MonoBehaviour
         if (score == 135000)
         {
             Debug.Log("hit first if statement");
-            MLKillPlayer.killBall();
+            mlBallMovementScript.killBall();
             bricksLevel1.SetActive(false);
             bricksLevel2.SetActive(true);
             levelName.text = "ML Level 2";
-            MLKillPlayer.InvokeMLStartMovement();
+            mlBallMovementScript.InvokeMLStartMovement();
         }
         if (score == 90000 + 135000)
         {
@@ -74,7 +68,7 @@ public class MLScoreCard : MonoBehaviour
         }
 
 
-        }
+    }
 
     // public method called to decrease lives, and set if game over screen should be displayed. Also teleports the ball offscreen
     public void decreaseLives() {

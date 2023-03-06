@@ -59,6 +59,7 @@ public class mlBallMovementVsPlayer : MonoBehaviour
 
             // calls the decrease lives function from the scorecard script
             scoreScript.decreaseLives();
+            killBall();
         }
         else
         {
