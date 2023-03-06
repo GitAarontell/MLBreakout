@@ -42,15 +42,5 @@ public class MLPaddleObservationScript : Agent
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // if the paddle hits the ball, it gets 1 point
-        if (collision.gameObject.name == "Ball")
-        {
-            SetReward(+1f);
-        }
-    }
-
-
 }
 

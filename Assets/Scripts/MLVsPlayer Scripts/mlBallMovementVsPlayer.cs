@@ -40,20 +40,18 @@ public class mlBallMovementVsPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         // when ball hits brick
         if (collision.gameObject.name == "Brick")
         {
             // destroy brick object
             Destroy(collision.gameObject);
 
-            // print(collision.otherRigidbody.velocity.magnitude);
-
             // Increment score
             scoreScript.increaseScore(collision.gameObject.GetComponent<SpriteRenderer>());
             // play this sound
             this.source.Play();
         }
-        // when ball hits bottom wall
         else if (collision.gameObject.name == "WallBottom")
         {
 
@@ -65,7 +63,6 @@ public class mlBallMovementVsPlayer : MonoBehaviour
         {
             this.source.Play(); // if it hits the paddle
         }
-
     }
 
     public void killBall()
@@ -76,38 +73,14 @@ public class mlBallMovementVsPlayer : MonoBehaviour
         Vector2 zeroVelocity = new Vector2(0, 0);
         this.gameObject.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
         this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
-        Debug.Log("ml kill");
         //Did this to add the delay
         if (scoreScript.getLives() > 0)
-            Invoke("restartMovement", 2.0f);
+            Invoke("startingForce", 2.0f);
         else
         {
             Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
             this.gameObject.transform.localPosition = offscreenPos;
         }
-    }
-
-    //doesnt do anything here, since ball movement is restarted in the ml scripts
-    public void restartMovement()
-    {
-        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
-        float randX = Random.Range(-1.0f, 1.0f);
-        Vector2 startForce = new Vector2(randX, -1);
-        //Player.GetComponent<Rigidbody2D>().velocity = startForce;
-        //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
-    }
-    //used in mlscorecard to counter restart being disbaled for other scripts
-    public void InvokeMLStartMovement()
-    {
-        Invoke("MLStartMovement", 2f);
-    }
-    public void MLStartMovement()
-    {
-        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
-        float randX = Random.Range(-1.0f, 1.0f);
-        Vector2 startForce = new Vector2(randX, -1);
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = startForce;
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
 }
 

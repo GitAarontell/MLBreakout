@@ -53,18 +53,16 @@ public class MLScoreCard : MonoBehaviour
         //checking for change in game state
         if (score == 135000)
         {
-            Debug.Log("hit first if statement");
             mlBallMovementScript.killBall();
             bricksLevel1.SetActive(false);
             bricksLevel2.SetActive(true);
             levelName.text = "ML Level 2";
-            mlBallMovementScript.InvokeMLStartMovement();
+            //mlBallMovementScript.InvokeMLStartMovement();
         }
         if (score == 90000 + 135000)
         {
          
             gameWon.SetActive(true);
-            Debug.Log("hit second if statement");
         }
 
 

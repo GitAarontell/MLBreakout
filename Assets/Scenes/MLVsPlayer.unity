@@ -1161,11 +1161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0314758
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9326968
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2449,7 +2449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913682654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.09, y: -1.95, z: 6.312355}
+  m_LocalPosition: {x: -3.2, y: -3.3, z: 6.312355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2828,6 +2828,7 @@ MonoBehaviour:
   ball: {fileID: 1165721837}
   gameWon: {fileID: 1585152471}
   bricksLevel2: {fileID: 200850574}
+  mlBallMovementScript: {fileID: 1165721844}
   bricksLevel1: {fileID: 659611546}
   levelName: {fileID: 1165613385}
 --- !u!114 &1050108476
@@ -11428,6 +11429,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 320702187470408233, guid: 003e609b96f275d4386a5669da731283, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 320702187487064506, guid: 003e609b96f275d4386a5669da731283, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -11455,32 +11460,13 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 320702187487064508, guid: 003e609b96f275d4386a5669da731283, type: 3}
     - {fileID: 320702186669866783, guid: 003e609b96f275d4386a5669da731283, type: 3}
+    - {fileID: 320702188015141888, guid: 003e609b96f275d4386a5669da731283, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 003e609b96f275d4386a5669da731283, type: 3}
 --- !u!4 &8194480547243016491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 320702187470408233, guid: 003e609b96f275d4386a5669da731283, type: 3}
   m_PrefabInstance: {fileID: 8194480547243016490}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8194480547243016492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 320702188015141890, guid: 003e609b96f275d4386a5669da731283, type: 3}
-  m_PrefabInstance: {fileID: 8194480547243016490}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8194480547243016493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8194480547243016492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaa65c0be616ab442869156c3e1c42d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1165721837}
-  respawnPoint: {fileID: 8194480547243016491}
-  scoreScript: {fileID: 1050108475}
 --- !u!61 &8315147393206771317
 BoxCollider2D:
   m_ObjectHideFlags: 0
