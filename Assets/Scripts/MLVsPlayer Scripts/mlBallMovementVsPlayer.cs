@@ -8,7 +8,7 @@ public class mlBallMovementVsPlayer : MonoBehaviour
     public Rigidbody2D rigidBody;
     public AudioSource source;
     private MLScoreCard scoreScript;
-    
+    public Transform respawnPoint;
 
 
     private void Awake()
@@ -65,6 +65,48 @@ public class mlBallMovementVsPlayer : MonoBehaviour
             this.source.Play(); // if it hits the paddle
         }
 
+    }
+
+    public void killBall()
+    {
+
+        this.gameObject.transform.position = respawnPoint.position;
+        // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
+        Vector2 zeroVelocity = new Vector2(0, 0);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+        this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+        Debug.Log("ml kill");
+        //Did this to add the delay
+        if (scoreScript.getLives() > 0)
+            Invoke("restartMovement", 2.0f);
+        else
+        {
+            Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
+            this.gameObject.transform.localPosition = offscreenPos;
+        }
+    }
+
+    //doesnt do anything here, since ball movement is restarted in the ml scripts
+    public void restartMovement()
+    {
+        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
+        float randX = Random.Range(-1.0f, 1.0f);
+        Vector2 startForce = new Vector2(randX, -1);
+        //Player.GetComponent<Rigidbody2D>().velocity = startForce;
+        //Player.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
+    }
+    //used in mlscorecard to counter restart being disbaled for other scripts
+    public void InvokeMLStartMovement()
+    {
+        Invoke("MLStartMovement", 2f);
+    }
+    public void MLStartMovement()
+    {
+        //random direction for x with vector y always going down. COPIED FROM BallMovement Script
+        float randX = Random.Range(-1.0f, 1.0f);
+        Vector2 startForce = new Vector2(randX, -1);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = startForce;
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
 }
 

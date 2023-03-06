@@ -13,12 +13,10 @@ public class MLScoreCard : MonoBehaviour
     public int lives = 3;
     public GameObject gameOver;
     public GameObject ball;
-    private SceneSwap sceneSwap;
     public GameObject gameWon;
     public GameObject bricksLevel2;
     private MLKillPlayer MLKillPlayer;
     public GameObject bricksLevel1;
-    public scoringMLAgent scoringMLAgent;
     public TMP_Text levelName;
     // blue is (0.13, 0.69, 0.90, 1.00)
     // 
@@ -36,7 +34,6 @@ public class MLScoreCard : MonoBehaviour
         // set lives to lives variable at start of game
         livesText.text = "Lives - " + this.lives.ToString();
         //setting sceneSwap
-        sceneSwap = FindObjectOfType<SceneSwap>();
         MLKillPlayer = FindObjectOfType<MLKillPlayer>();
 
     }
@@ -57,8 +54,7 @@ public class MLScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
-        // ML specific thing to not get the ml script to call for the bricks to get redone
-        scoringMLAgent.setBrickCount(45);
+
 
         //checking for change in game state
         if (score == 135000)

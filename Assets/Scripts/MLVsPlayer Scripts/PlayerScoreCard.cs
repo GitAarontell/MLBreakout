@@ -13,10 +13,8 @@ public class PlayerScoreCard : MonoBehaviour
     public int lives = 3;
     public GameObject gameOver;
     public GameObject ball;
-    private SceneSwap sceneSwap;
     public GameObject gameWon;
     public GameObject bricksLevel2;
-    // private PlayerKillPlayer playerKillPlayer;
     public PlayerBallMovement playerBallMovementScript;
     public TMP_Text levelName;
 
@@ -35,10 +33,6 @@ public class PlayerScoreCard : MonoBehaviour
         scoreText.text = 0000.ToString("D4");
         // set lives to lives variable at start of game
         livesText.text = "Lives - " + this.lives.ToString();
-        //setting sceneSwap
-        sceneSwap = FindObjectOfType<SceneSwap>();
-        // playerKillPlayer= FindObjectOfType<PlayerKillPlayer>();
-
     }
 
     // called by 
@@ -52,6 +46,8 @@ public class PlayerScoreCard : MonoBehaviour
         score += colors[convertedColor];
         // update text component to show new score
         scoreText.text = score.ToString("D4");
+
+        // this updates the level text
         if (score == 135000)
         {
             playerBallMovementScript.killBall();
@@ -61,8 +57,6 @@ public class PlayerScoreCard : MonoBehaviour
         }
         if (score == 90000 + 135000 )
             gameWon.SetActive(true);
-
-        
     }
 
     // public method called to decrease lives, and set if game over screen should be displayed. Also teleports the ball offscreen

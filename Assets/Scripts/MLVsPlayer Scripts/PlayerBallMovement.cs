@@ -32,11 +32,6 @@ public class PlayerBallMovement : MonoBehaviour
         Invoke("startingForce", 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void startingForce()
     {
         // random direction for x with vector y always going down
