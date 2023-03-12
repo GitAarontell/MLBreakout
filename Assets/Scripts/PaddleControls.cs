@@ -34,7 +34,6 @@ public class PaddleControls : MonoBehaviour
             // othercollider refers to the object that collided with the ball
             Collider2D Paddle = collision.otherCollider;
             Rigidbody2D ball = collision.gameObject.GetComponent<Rigidbody2D>();
-
             // GetContact(0) gives the contact object I think not sure can't find too much info
             // gets x value from contact point 
             // contact point info: https://docs.unity3d.com/ScriptReference/ContactPoint2D.html

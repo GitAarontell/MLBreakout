@@ -22,7 +22,6 @@ public class PlayerBallMovement : MonoBehaviour
 
     void Start()
     {
-
         // find the scorecard script object. This function is really slow, so we just want to use it once and
         // store it in a variable since we will use it everytime we decrement lives.
         scoreScript = FindObjectOfType<PlayerScoreCard>();
@@ -43,7 +42,6 @@ public class PlayerBallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(rigidBody.velocity.magnitude);
         if (collision.gameObject.name == "Brick")
         {
             // destroy brick object

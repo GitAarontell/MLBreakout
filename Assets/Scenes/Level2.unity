@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 234713466}
   - component: {fileID: 234713468}
   - component: {fileID: 234713469}
+  - component: {fileID: 234713470}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Untagged
@@ -687,6 +688,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &234713470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234713465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfe93a8bfa3c7e4faaa6535a3ce43d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256667237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,6 +3343,7 @@ GameObject:
   - component: {fileID: 1313321316}
   - component: {fileID: 1313321318}
   - component: {fileID: 1313321319}
+  - component: {fileID: 1313321320}
   m_Layer: 0
   m_Name: WallTop
   m_TagString: Untagged
@@ -3451,6 +3465,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1313321320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313321315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfe93a8bfa3c7e4faaa6535a3ce43d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1337891624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3876,6 +3902,7 @@ MonoBehaviour:
   rigidBody: {fileID: 1531437629}
   source: {fileID: 1531437630}
   gameWon: {fileID: 1272472015}
+  respawnPoint: {fileID: 0}
 --- !u!50 &1531437629 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4261628031831473026, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
@@ -4342,6 +4369,7 @@ GameObject:
   - component: {fileID: 1964704857}
   - component: {fileID: 1964704859}
   - component: {fileID: 1964704860}
+  - component: {fileID: 1964704861}
   m_Layer: 0
   m_Name: WallRight
   m_TagString: Untagged
@@ -4463,6 +4491,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1964704861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964704856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfe93a8bfa3c7e4faaa6535a3ce43d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1994480367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,6 +4961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 3317024322482057444}
   livesText: {fileID: 3317024324366733727}
+  lives: 3
   gameOver: {fileID: 912110688}
   ball: {fileID: 1531437626}
   gameWon: {fileID: 1272472015}

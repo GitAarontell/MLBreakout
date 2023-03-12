@@ -1516,6 +1516,7 @@ GameObject:
   - component: {fileID: 1313321316}
   - component: {fileID: 1313321318}
   - component: {fileID: 1313321319}
+  - component: {fileID: 1313321320}
   m_Layer: 0
   m_Name: WallTop
   m_TagString: Wall
@@ -1637,6 +1638,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1313321320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313321315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfe93a8bfa3c7e4faaa6535a3ce43d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494290131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,7 +2399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0314758
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 4261628031831473024, guid: b681ebdab87ccb94d83f364bd20a2dda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2501,6 +2514,10 @@ PrefabInstance:
     - target: {fileID: 5258019151117142487, guid: aa6c58170f958734295f496c5771ab30, type: 3}
       propertyPath: m_Name
       value: Bricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258019151117142487, guid: aa6c58170f958734295f496c5771ab30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6c58170f958734295f496c5771ab30, type: 3}

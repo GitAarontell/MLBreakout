@@ -32,12 +32,16 @@ public class BallMovement : MonoBehaviour
         Invoke("startingForce", 1);
     }
 
+    private void Update()
+    {
+        
+    }
+
     void startingForce()
     {
         // random direction for x with vector y always going down
         float randX = Random.Range(-1.0f, 1.0f);
         Vector2 startForce = new Vector2(randX, -1);
-
         this.rigidBody.AddForce(startForce.normalized * 400f);
     }
 
@@ -86,7 +90,6 @@ public class BallMovement : MonoBehaviour
         //random direction for x with vector y always going down. COPIED FROM BallMovement Script
         float randX = Random.Range(-1.0f, 1.0f);
         Vector2 startForce = new Vector2(randX, -1);
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = startForce;
         this.gameObject.GetComponent<Rigidbody2D>().AddForce(startForce.normalized * 400f);
     }
 }

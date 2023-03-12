@@ -9,17 +9,7 @@ public class SceneSwap : MonoBehaviour
 
     //private int current_level = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int time = 30;
     //Returns to main menu
     public void returnToMenu()
     {
@@ -43,8 +33,43 @@ public class SceneSwap : MonoBehaviour
     public void PlayMLBreakout()
     {
         
-        SceneManager.LoadScene("MLVsPlayer");
+        SceneManager.LoadScene("ComputerLevel");
         
+    }
+
+    public void Play30MinAI() {
+        time = 30;
+        SceneManager.LoadScene("MLVsPlayer");
+    }
+
+    public void Play40MinAI()
+    {
+        time = 40;
+        SceneManager.LoadScene("MLVsPlayer");
+    }
+
+    public void Play50MinAI()
+    {
+        time = 50;
+        SceneManager.LoadScene("MLVsPlayer");
+    }
+
+    public void Play60MinAI()
+    {
+        time = 60;
+        SceneManager.LoadScene("MLVsPlayer");
+    }
+
+    public void Play120MinAI()
+    {
+        time = 120;
+        SceneManager.LoadScene("MLVsPlayer");
+    }
+
+    public void Play240MinAI()
+    {
+        time = 240;
+        SceneManager.LoadScene("MLVsPlayer");
     }
     //Quits the game
     public void Quit()

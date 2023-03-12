@@ -3,7 +3,11 @@ guid: c01fdcde38ed38743b8ccf38b4bbd31f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ball: {instanceID: 0}
+  - ballRigidBody: {instanceID: 0}
+  - model: {fileID: 5022602860645237092, guid: 316a46431a0ddba499b6cf46037f2992, type: 3}
+  - model2: {fileID: 5022602860645237092, guid: 13899f345ce44a4469834ea5b1de6e11, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

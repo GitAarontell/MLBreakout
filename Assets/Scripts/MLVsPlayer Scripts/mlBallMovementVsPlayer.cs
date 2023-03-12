@@ -15,7 +15,6 @@ public class mlBallMovementVsPlayer : MonoBehaviour
     {
         // required if we do not drag in rigid body into the reference in the ballmovement script in UI
         // so this grabs the rigidbody of this object without the dragging required
-        // this.rigidBody = GetComponent<Rigidbody2D>();
         this.source = GetComponent<AudioSource>();
     }
 
