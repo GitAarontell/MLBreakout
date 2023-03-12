@@ -16,6 +16,7 @@ public class PlayerScoreCard : MonoBehaviour
     public GameObject gameWon;
     public GameObject bricksLevel2;
     public PlayerBallMovement playerBallMovementScript;
+    public mlBallMovementVsPlayer mlBallMovementScript;
     public TMP_Text levelName;
 
     // blue is (0.13, 0.69, 0.90, 1.00)
@@ -55,8 +56,11 @@ public class PlayerScoreCard : MonoBehaviour
             levelName.text = "Player Level 2";
             
         }
-        if (score == 90000 + 135000 )
+        if (score == 90000 + 135000) {
             gameWon.SetActive(true);
+            mlBallMovementScript.endGame();
+        }
+            
     }
 
     // public method called to decrease lives, and set if game over screen should be displayed. Also teleports the ball offscreen
@@ -65,7 +69,8 @@ public class PlayerScoreCard : MonoBehaviour
         if (lives == 0)
         {
             // commented out for training ml agent
-            gameOver.SetActive(true);            
+            gameOver.SetActive(true);
+            mlBallMovementScript.endGame();
         }
         livesText.text = "Lives - " + lives.ToString();
     }

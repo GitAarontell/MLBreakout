@@ -16,6 +16,7 @@ public class MLScoreCard : MonoBehaviour
     public GameObject gameWon;
     public GameObject bricksLevel2;
     public mlBallMovementVsPlayer mlBallMovementScript;
+    public PlayerBallMovement playerBallMovementScript;
     public GameObject bricksLevel1;
     public TMP_Text levelName;
     // blue is (0.13, 0.69, 0.90, 1.00)
@@ -63,6 +64,7 @@ public class MLScoreCard : MonoBehaviour
         {
          
             gameWon.SetActive(true);
+            playerBallMovementScript.endGame();
         }
 
 
@@ -74,7 +76,8 @@ public class MLScoreCard : MonoBehaviour
         if (lives == 0)
         {
             // commented out for training ml agent
-            gameOver.SetActive(true);            
+            gameOver.SetActive(true);
+            playerBallMovementScript.endGame();
         }
         livesText.text = "Lives - " + lives.ToString();
     }

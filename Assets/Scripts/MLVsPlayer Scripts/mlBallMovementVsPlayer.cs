@@ -81,5 +81,16 @@ public class mlBallMovementVsPlayer : MonoBehaviour
             this.gameObject.transform.localPosition = offscreenPos;
         }
     }
+
+    // called when player wins so ml stops playing
+    public void endGame() {
+        this.gameObject.transform.position = respawnPoint.position;
+        // Need to zero out only the velocity since there should be no force (at least I think Unity shouldnt think there is based on oncollision being called on frame of "impact")
+        Vector2 zeroVelocity = new Vector2(0, 0);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = zeroVelocity;
+        this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+        Vector3 offscreenPos = new Vector3(2000.0f, 2000.0f);
+        this.gameObject.transform.localPosition = offscreenPos;
+    }
 }
 
